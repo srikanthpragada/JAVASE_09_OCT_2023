@@ -15,5 +15,7 @@ public class EvenOdd {
 			System.out.println("Even");
 		else
 			System.out.println("Odd");
+		
+		s.close();
 	}
 }
