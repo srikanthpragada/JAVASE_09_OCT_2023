@@ -5,8 +5,8 @@ public class Course {
 	private String name;
 	private int fee;
 	
-	// Methods 
-	public void init(String n, int f) {
+	//Constructor
+	public Course(String n, int f) {
 		name = n;
 		fee = f; 
 	}
