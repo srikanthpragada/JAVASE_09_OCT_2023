@@ -7,14 +7,14 @@ class Counter {
 	}
 	
 	public Counter(int v) {
-		value = v;
+		this.value = v;
 	}
 
 	public void inc() {
-		value++;
+		this.value++;
 	}
 	public void inc(int step) {
-		value += step;
+		this.value += step;
 	}
 
 	public void dec() {
