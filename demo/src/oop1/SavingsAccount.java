@@ -5,27 +5,26 @@ public class SavingsAccount {
 	private String holderName;
 	private double balance;
 
-	public SavingsAccount(int no, String name, double bal) {
-		acno = no;
-		holderName = name;
-		balance = bal;
+	public SavingsAccount(int acno, String holderName, double balance) {
+		this.acno = acno;
+		this.holderName = holderName;
+		this.balance = balance;
 	}
 
-	public SavingsAccount(int no, String name) {
-		acno = no;
-		holderName = name;
+	public SavingsAccount(int acno, String holderName) {
+		this(acno, holderName, 0);
 	}
 
 	public void deposit(double amount) {
-		balance += amount;
+		this.balance += amount;
 	}
 
 	public void withdraw(double amount) {
-		balance -= amount;
+		this.balance -= amount;
 	}
 
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 
 }

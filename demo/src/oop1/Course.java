@@ -4,20 +4,26 @@ public class Course {
 	// Instance variables 
 	private String name;
 	private int fee;
+	// Class variable 
+	private static int taxRate = 12;
+	
+	public static void setTaxRate(int taxRate) {
+		Course.taxRate = taxRate;
+	}
 	
 	//Constructor
-	public Course(String n, int f) {
-		name = n;
-		fee = f; 
+	public Course(String name, int fee) {
+		this.name = name;
+		this.fee = fee; 
 	}
 	
 	public void print() {
-		System.out.println(name);
-		System.out.println(fee);
+		System.out.println(this.name);
+		System.out.println(this.fee);
 	}
 	
 	public int netFee() {
-		return  fee +  fee * 12 / 100; 
+		return  this.fee +  this.fee * taxRate / 100; 
 	}
 
 }

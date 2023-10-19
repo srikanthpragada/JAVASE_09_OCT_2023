@@ -10,6 +10,11 @@ public class TestCourse {
 		 
 		 Course c2 = new Course("Java EE", 20000);
 		 c2.print(); 
+		 
+		 Course.setTaxRate(15);
+		 
+		 //System.out.println(Course.getCount());
+		 
 	}
 
 }

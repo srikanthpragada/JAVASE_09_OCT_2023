@@ -18,15 +18,15 @@ class Counter {
 	}
 
 	public void dec() {
-		value--;
+		this.value--;
 	}
 
 	public void dec(int step) {
-		value -= step;
+		this.value -= step;
 	}
 	
 	public int getValue() {
-		return value;
+		return this.value;
 	}
 }
 
