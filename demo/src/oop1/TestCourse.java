@@ -13,7 +13,7 @@ public class TestCourse {
 		 
 		 Course.setTaxRate(15);
 		 
-		 //System.out.println(Course.getCount());
+		 System.out.println(Course.getCount());
 		 
 	}
 

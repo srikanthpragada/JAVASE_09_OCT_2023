@@ -4,6 +4,7 @@ public class SavingsAccount {
 	private int acno;
 	private String holderName;
 	private double balance;
+	private static int minBalance = 10000;
 
 	public SavingsAccount(int acno, String holderName, double balance) {
 		this.acno = acno;
@@ -20,7 +21,10 @@ public class SavingsAccount {
 	}
 
 	public void withdraw(double amount) {
-		this.balance -= amount;
+		if (this.balance - SavingsAccount.minBalance >= amount)
+			this.balance -= amount;
+		else
+			System.out.println("Insufficient Balance!");
 	}
 
 	public double getBalance() {
