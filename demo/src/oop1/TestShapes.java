@@ -32,6 +32,7 @@ class Square extends Shape {
 	}
 
 	// Override
+	@Override 
 	public void print() {
 		super.print();
 		System.out.println(this.side);
@@ -43,11 +44,46 @@ class Square extends Shape {
 
 }
 
+class Rect extends Shape {
+	private int length, width;
+
+	public Rect(int x, int y, int length, int width) {
+		super(x, y); // pass params to superclass constructor
+		this.length = length;
+		this.width= width;
+    }
+
+	// Override
+	@Override 
+	public void print() {
+		super.print();
+		System.out.println(this.length);
+		System.out.println(this.width);
+	}
+
+	public int area() {
+		return this.length * this.width;
+	}
+}
+
+
 public class TestShapes {
 
 	public static void main(String[] args) {
-		 Square s = new Square(10,20,5);
-		 System.out.println(s.area());
+		 Shape s;
+		 
+		 s = new Square(10,20,5);  // Upcasting 
 		 s.print();
-	}
+		 
+		 s = new Rect(10,10,20,20); // upcasting
+		 
+		 
+		 if (s instanceof Square) {
+		     Square sq1 = (Square) s;  // Downcasting
+		 }
+		 
+		 
+		 if (s instanceof Square sq)
+			 System.out.println(sq.area());
+		     
 }
