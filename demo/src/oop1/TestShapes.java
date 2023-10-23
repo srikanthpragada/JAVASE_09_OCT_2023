@@ -1,6 +1,6 @@
 package oop1;
 
-class Shape {
+abstract class Shape {
 	protected int x, y;
 
 	public Shape(int x, int y) {
@@ -13,14 +13,15 @@ class Shape {
 		System.out.println(this.y);
 	}
 
-	public int getX() {
+	public final int getX() {
 		return this.x;
 	}
 
-	public int getY() {
+	public final int getY() {
 		return this.y;
 	}
 
+	public abstract int area();
 }
 
 class Square extends Shape {
@@ -32,7 +33,7 @@ class Square extends Shape {
 	}
 
 	// Override
-	@Override 
+	@Override
 	public void print() {
 		super.print();
 		System.out.println(this.side);
@@ -50,11 +51,11 @@ class Rect extends Shape {
 	public Rect(int x, int y, int length, int width) {
 		super(x, y); // pass params to superclass constructor
 		this.length = length;
-		this.width= width;
-    }
+		this.width = width;
+	}
 
 	// Override
-	@Override 
+	@Override
 	public void print() {
 		super.print();
 		System.out.println(this.length);
@@ -66,24 +67,26 @@ class Rect extends Shape {
 	}
 }
 
-
 public class TestShapes {
 
 	public static void main(String[] args) {
-		 Shape s;
-		 
-		 s = new Square(10,20,5);  // Upcasting 
-		 s.print();
-		 
-		 s = new Rect(10,10,20,20); // upcasting
-		 
-		 
-		 if (s instanceof Square) {
-		     Square sq1 = (Square) s;  // Downcasting
-		 }
-		 
-		 
-		 if (s instanceof Square sq)
-			 System.out.println(sq.area());
-		     
+		Shape s;
+
+		s = new Square(10, 20, 5); // Upcasting
+		s.print(); // runtime polymorphism
+		System.out.println(s.area());
+
+		s = new Rect(10, 10, 20, 20); // upcasting
+		s.print();
+		System.out.println(s.area());
+
+//		 if (s instanceof Square) {
+//		     Square sq1 = (Square) s;  // Downcasting
+//		 }
+//		 
+//		 
+//		 if (s instanceof Square sq)
+//			 System.out.println(sq.area());
+//		     
+	}
 }
