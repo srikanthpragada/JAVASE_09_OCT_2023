@@ -1,7 +1,7 @@
 package test;
 
 import java.time.LocalDate;
-import sales.Order;
+import sales.*;
 
 public class TestSales {
 
