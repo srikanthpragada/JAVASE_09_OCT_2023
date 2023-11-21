@@ -30,8 +30,5 @@ public class ListCustomers2 {
 			var phones = String.join(" - ",customers.get(name));
 			System.out.printf("%-20s  %s\n", name,phones); 
 		}
-					  
-
 	}
-
 }
