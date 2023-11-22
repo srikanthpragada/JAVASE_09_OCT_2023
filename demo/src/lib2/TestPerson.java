@@ -44,6 +44,12 @@ class SortByAge implements Comparator<Person> {
 }
 
 public class TestPerson {
+	
+	public static int compareByAge(Person p1, Person p2) {
+		return p1.getAge()- p2.getAge();
+	}
+	
+	
 	public static void main(String[] args) {
 		var persons = new ArrayList<Person>();
 
@@ -52,9 +58,21 @@ public class TestPerson {
 		persons.add(new Person("Pqr", 50));
 		
 		//Collections.sort(persons, new SortByAge());
-		// Lambda Expression 
-		Collections.sort(persons, (p1, p2) -> p1.getAge() - p2.getAge());
 		
+		Comparator<Person> comp = (p1, p2) -> p1.getAge() - p2.getAge();
+		System.out.println(comp.getClass());
+		
+		// Lambda Expression 
+		Collections.sort(persons,  (p1, p2) -> p1.getAge() - p2.getAge());   
+				
+		// Lambda Block 
+		Collections.sort(persons,  (p1, p2) -> {
+			return p1.getAge() - p2.getAge();   
+		});
+		
+		// Method Reference  
+ 	    Collections.sort(persons, TestPerson::compareByAge);
+				
 		for(var p : persons)
 			System.out.println(p);
 
